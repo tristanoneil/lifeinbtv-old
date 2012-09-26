@@ -1,20 +1,20 @@
 $(function() {
   function addPlayerEvents() {
-    var iframe = $("#vimeo")[0],
-        player = $f(iframe);
+    var iframe = $("#vimeo")[0];
+    window.player = $f(iframe);
 
-    player.addEvent("ready", function() {
-      player.addEvent("play", function() {
+    window.player.addEvent("ready", function() {
+      window.player.addEvent("play", function() {
         $("section.video").css("opacity", "1");
         $("div.tint").show();
       });
 
-      player.addEvent("pause", function() {
+      window.player.addEvent("pause", function() {
         $("div.tint").hide();
       });
 
-      $("div.tint").live("click", function() {
-        player.api("pause");
+      $("div.tint").bind("click", function() {
+        window.player.api("pause");
         $("div.tint").hide();
       });
     });
