@@ -15,7 +15,11 @@
       <p class="description"><%= @video["description"] %></p>
     </section>
     <section class="three columns share">
-      <a>Share</a>
+      <span>Share</span>
+      <div>
+        <a href="https://twitter.com/share?text=<%= @video["title"] %>&amp;url=http://lifeinbtv.com/videos/<%= @video["id"] %>"><img src="/img/twitter.png"> Twitter</a>
+        <a href="http://www.facebook.com/sharer.php?u=http://lifeinbtv.com/videos/<%= @video["id"] %>"><img src="/img/facebook.png"> Facebook</a>
+      </div>
     </section>
   </section>
 </header>

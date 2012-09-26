@@ -34,4 +34,18 @@ $(function() {
     $("#main .video").html("<h3>Loading</h3>")
     $("html, body").animate({ scrollTop: 0 }, "slow");
   });
+
+  $(".share a").live("click", function(e) {
+    e.preventDefault();
+    window.open($(this).attr("href"), "Share", "height=300,width=600");
+  });
+
+  $(".share span").live("click", function(e) {
+    e.stopPropagation();
+    $(".share div").toggle();
+  })
+
+  $(".share ul, body").live("click", function() {
+    $(".share div").hide();
+  });
 });
