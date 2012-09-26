@@ -3,28 +3,31 @@ $(function() {
     var iframe = $("#vimeo")[0],
         player = $f(iframe);
 
-    player.addEvent("play", function() {
-      $("section.video").css("opacity", "1");
-      $("div.tint").show();
-    });
+    player.addEvent("ready", function() {
+      player.addEvent("play", function() {
+        $("section.video").css("opacity", "1");
+        $("div.tint").show();
+      });
 
-    player.addEvent("pause", function() {
-      $("div.tint").hide();
+      player.addEvent("pause", function() {
+        $("div.tint").hide();
+      });
+
+      $("div.tint").live("click", function() {
+        player.api("pause");
+        $("div.tint").hide();
+      });
     });
   }
 
-  $("#vimeo").ready(function() {
-    addPlayerEvents();
-  });
+  addPlayerEvents();
 
   $.pjax.defaults.timeout = 4000;
 
   $("a[data-pjax]").pjax("#main", { fragment: "#main" })
 
   $("#main").on("pjax:complete", function(e, xhr, err) {
-    $("#vimeo").ready(function() {
-      addPlayerEvents();
-    });
+    addPlayerEvents();
   });
 
   $("#main").on("pjax:beforeSend", function(e, xhr, err) {
