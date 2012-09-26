@@ -1,0 +1,130 @@
+body {
+  margin:0;
+}
+
+div.tint {
+  background:#111;
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index:999;
+  opacity:.9;
+  display:none;
+}
+
+header {
+  background:url("http://subtlepatterns.com/patterns/vertical_cloth.png");
+  padding:50px 0 20px 0;
+  border-bottom:solid 10px #111;
+}
+
+h1 {
+  font-family:"Open Sans", sans-serif;
+  color:#fff;
+  text-transform:uppercase;
+  font-weight:800;
+  margin:0;
+}
+
+.arrow {
+  width:0;
+  height:0;
+  border-right:18px solid transparent;
+  border-bottom:18px solid #8cbd35;
+  margin-left:200px;
+}
+
+div.quote {
+  font-family:"Arvo", serif;
+  background:#8cbd35;
+  padding:10px 40px 10px 40px;
+  font-weight:700;
+  color:#fff;
+  float:left;
+  border-radius:5px;
+  box-shadow:0 5px 0 #78aa4c;
+  margin-left:80px;
+}
+
+section { padding:0 !important; }
+
+section.video {
+  margin-top:50px;
+  border:solid 10px #111;
+  opacity:.5;
+  -webkit-transition:opacity ease 1s;
+  -moz-transition:opacity ease 1s;
+  -o-transition:opacity ease 1s;
+  transition:opacity ease 1s;
+  z-index:9999;
+  min-height:518px;
+  text-align:center;
+  background:#111;
+}
+
+section.video h3 {
+  color:#fff;
+  margin-top:245px;
+}
+
+section.video:hover {
+  opacity:1;
+}
+
+section.meta {
+  margin-top:30px;
+}
+
+section.meta h3 {
+  color:#fff;
+  margin:0;
+}
+
+section.meta p {
+  color:#fff;
+}
+
+section.share {
+  text-align:right;
+  margin-top:50px;
+}
+
+section.share a {
+  color:#fff;
+  font-family:"Arvo", serif;
+  font-weight:700;
+  background:#46a9d3;
+  padding:10px 20px 10px 20px;
+  border-radius:4px;
+  box-shadow:0 3px #1a759d;
+}
+
+section.share a:active {
+  background:#1a759d;
+  box-shadow:0 -2px #0b486a;
+}
+
+section.videos { margin-top:50px; }
+
+section.videos a.video { margin-bottom:30px; }
+
+section.videos a.video h6 { font-weight:300; }
+
+section.videos a.video img {
+  opacity:.8;
+  border:solid 5px #eee;
+  -webkit-transition:opacity ease .5s;
+  -moz-transition:opacity ease .5s;
+  -o-transition:opacity ease .5s;
+  transition:opacity ease .5s;
+}
+
+section.videos a.video img:hover { opacity:1; }
+
+footer p { font-weight:700; }
+
+footer p span {
+  color:#cc3034;
+}
+
+footer a, a:visited, a:hover { color:#cc3034; }

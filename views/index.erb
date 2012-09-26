@@ -1,0 +1,31 @@
+<div class="tint"></div>
+<header id="main" class="container">
+  <section class="row">
+    <section class="twelve columns">
+      <h1>Life in BTV</h1>
+      <div class="arrow"></div>
+      <div class="arrow-border"></div>
+      <div class="quote">Burlington, Vermont</div>
+    </section>
+    <section class="twelve columns video">
+      <iframe id="vimeo" src="http://player.vimeo.com/video/<%= @video["id"] %>?api=1&player_id=vimeo&title=0&portrait=0&byline=0" width="920" height="518" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    </section>
+    <section class="nine columns meta">
+      <h3 class="title"><%= @video["title"] %></h3>
+      <p class="description"><%= @video["description"] %></p>
+    </section>
+    <section class="three columns share">
+      <a>Share</a>
+    </section>
+  </section>
+</header>
+<section class="container">
+  <section class="row videos">
+    <% @videos.each do |video| %>
+    <a href="/videos/<%= video["id"] %>" data-pjax="#main" class="three columns video">
+      <img src="<%= video["thumbnail_large"] %>">
+      <h6><%= video["title"] %></h6>
+    </a>
+    <% end %>
+  </section>
+</section>
