@@ -1,6 +1,9 @@
-require "newrelic_rpm"
 require "sinatra"
 require "vimeo"
+
+configure :production do
+  require "newrelic_rpm"
+end
 
 get "/" do
   @videos = Vimeo::Simple::Album.videos("2087592")
