@@ -17,8 +17,8 @@
     <section class="three columns share">
       <span>Share</span>
       <div>
-        <a href="https://twitter.com/share?text=<%= @video["title"] %>&amp;url=http://www.lifeinbtv.com/videos/<%= @video["id"] %>"><img src="/img/twitter.png"> Twitter</a>
-        <a href="http://www.facebook.com/sharer.php?u=http://www.lifeinbtv.com/videos/<%= @video["id"] %>"><img src="/img/facebook.png"> Facebook</a>
+        <a href="https://twitter.com/share?text=<%= CGI.escape(@video["title"]) %>&amp;url=http://www.lifeinbtv.com/videos/<%= @video["id"] %>"><img alt="Share On Twitter" src="/img/twitter.png"> Twitter</a>
+        <a href="http://www.facebook.com/sharer.php?u=http://www.lifeinbtv.com/videos/<%= @video["id"] %>"><img alt="Share On Facebook" src="/img/facebook.png"> Facebook</a>
       </div>
     </section>
   </section>
@@ -27,7 +27,7 @@
   <section class="row videos">
     <% @videos.each do |video| %>
     <a href="/videos/<%= video["id"] %>" data-pjax="#main" class="three columns video">
-      <img src="<%= video["thumbnail_large"] %>">
+      <img src="<%= video["thumbnail_large"] %>" alt="<%= video["title"] %>">
       <h6><%= video["title"] %></h6>
     </a>
     <% end %>
