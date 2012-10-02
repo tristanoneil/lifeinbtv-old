@@ -20,6 +20,13 @@ $(function() {
     });
   }
 
+  $(".videos").imagesLoaded(function() {
+    $('.videos').masonry({
+      itemSelector : '.video',
+      columnWidth : 235
+    });
+  });
+
   addPlayerEvents();
 
   $.pjax.defaults.timeout = 4000;
