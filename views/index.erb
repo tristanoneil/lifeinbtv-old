@@ -2,23 +2,23 @@
 <header id="main" class="container">
   <section class="row">
     <section class="twelve columns">
-      <h1>Life in BT<span>V</span></h1>
+      <h1>Life in BTV</h1>
       <div class="arrow"></div>
       <div class="arrow-border"></div>
       <div class="quote">Burlington, Vermont</div>
     </section>
     <section class="twelve columns video">
-      <iframe id="vimeo" src="http://player.vimeo.com/video/<%= @video["id"] %>?api=1&amp;player_id=vimeo" width="920" height="518" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      <%= @video.embed_html5(width:"920", height: "518", url_params: { showinfo: 0, vq: "hd1080" }) %>
     </section>
     <section class="nine columns meta">
-      <h3 class="title"><%= @video["title"] %></h3>
-      <p class="description"><%= @video["description"] %></p>
+      <h3 class="title"><%= @video.title %></h3>
+      <p class="description"><%= @video.description %></p>
     </section>
     <section class="three columns share">
       <span>Share</span>
       <div>
-        <a href="https://twitter.com/share?text=<%= CGI.escape(@video["title"]) %>&amp;url=http://www.lifeinbtv.com/videos/<%= @video["id"] %>"><img alt="Share On Twitter" src="/img/twitter.png"> Twitter</a>
-        <a href="http://www.facebook.com/sharer.php?u=http://www.lifeinbtv.com/videos/<%= @video["id"] %>"><img alt="Share On Facebook" src="/img/facebook.png"> Facebook</a>
+        <a href="https://twitter.com/share?text=<%= CGI.escape(@video.title) %>&amp;url=http://www.lifeinbtv.com/videos/<%= @video.unique_id %>"><img alt="Share On Twitter" src="/img/twitter.png"> Twitter</a>
+        <a href="http://www.facebook.com/sharer.php?u=http://www.lifeinbtv.com/videos/<%= @video.unique_id %>"><img alt="Share On Facebook" src="/img/facebook.png"> Facebook</a>
       </div>
     </section>
   </section>
@@ -26,10 +26,10 @@
 <section class="container">
   <section class="row videos">
     <% @videos.each do |video| %>
-    <a href="/videos/<%= video["id"] %>" data-pjax="#main" class="three columns video">
-      <img src="<%= video["thumbnail_large"] %>" alt="<%= video["title"] %>">
-      <h6><%= video["title"] %></h6>
-    </a>
+      <a href="/videos/<%= video.unique_id %>" data-pjax="#main" class="three columns video">
+        <h6><%= video.title %></h6>
+        <img src="<%= video.thumbnails[3].url %>" alt="<%= video.title %>">
+      </a>
     <% end %>
   </section>
 </section>

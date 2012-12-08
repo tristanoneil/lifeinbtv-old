@@ -1,13 +1,17 @@
 require "sinatra"
-require "vimeo"
+require "youtube_it"
 
 configure :production do
   require "newrelic_rpm"
 end
 
+before do
+  @client = YouTubeIt::Client.new
+end
+
 get "/" do
-  @videos = Vimeo::Simple::Album.videos("2087592")
-  @video  = @videos[0]
+  @videos = @client.playlist("PLsB13dE-JieYn9bBim5KhNWWIyg8FqQAA").videos
+  @video  = @videos.first
 
   if request.xhr?
     erb :index, :layout => false
@@ -17,8 +21,8 @@ get "/" do
 end
 
 get "/videos/:id" do
-  @video  = Vimeo::Simple::Video.info(params[:id])[0]
-  @videos = Vimeo::Simple::Album.videos("2087592")
+  @video  = @client.video_by(params[:id])
+  @videos = @client.playlist("PLsB13dE-JieYn9bBim5KhNWWIyg8FqQAA").videos
 
   if request.xhr?
     erb :index, :layout => false
