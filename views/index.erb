@@ -1,4 +1,3 @@
-<div class="tint"></div>
 <header id="main" class="container">
   <section class="row">
     <section class="twelve columns">
@@ -8,13 +7,15 @@
       <div class="quote">Burlington, Vermont</div>
     </section>
     <section class="twelve columns video">
-      <%= @video.embed_html5(width:"920", height: "518", url_params: { showinfo: 0, vq: "hd1080" }) %>
+      <div class="video-embed">
+        <%= @video.embed_html5(url_params: { showinfo: 0, vq: "hd1080" }) %>
+      </div>
     </section>
     <section class="nine columns meta">
       <h3 class="title"><%= @video.title %></h3>
       <p class="description"><%= @video.description %></p>
     </section>
-    <section class="three columns share">
+    <section class="three columns share hide-for-small">
       <span>Share</span>
       <div>
         <a href="https://twitter.com/share?text=<%= CGI.escape(@video.title) %>&amp;url=http://www.lifeinbtv.com/videos/<%= @video.unique_id %>"><img alt="Share On Twitter" src="/img/twitter.png"> Twitter</a>
@@ -26,10 +27,12 @@
 <section class="container">
   <section class="row videos">
     <% @videos.each do |video| %>
-      <a href="/videos/<%= video.unique_id %>" data-pjax="#main" class="three columns video">
-        <h6><%= video.title %></h6>
-        <img src="<%= video.thumbnails[3].url %>" alt="<%= video.title %>">
-      </a>
+      <div class="three columns video">
+        <a href="/videos/<%= video.unique_id %>" data-pjax="#main"><h6><%= video.title %></h6></a>
+        <a href="/videos/<%= video.unique_id %>" data-pjax="#main" class="crop">
+          <img src="<%= video.thumbnails[3].url %>" alt="<%= video.title %>">
+        </a>
+      </div>
     <% end %>
   </section>
 </section>

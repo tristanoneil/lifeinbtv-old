@@ -2,7 +2,9 @@ $(function() {
   $(".videos").imagesLoaded(function() {
     $('.videos').masonry({
       itemSelector : '.video',
-      columnWidth : 235
+      columnWidth: function(containerWidth) {
+        return containerWidth / 4;
+      },
     });
   });
 
@@ -11,7 +13,7 @@ $(function() {
   $("a[data-pjax]").pjax("#main", { fragment: "#main" })
 
   $("#main").on("pjax:beforeSend", function(e, xhr, err) {
-    $("#main .video").html("<h3>Loading</h3>")
+    $("#main .video-embed").html("<h3>Loading</h3>")
     $("html, body").animate({ scrollTop: 0 }, "slow");
   });
 
