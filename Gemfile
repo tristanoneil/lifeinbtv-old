@@ -1,6 +1,6 @@
 source :rubygems
 
 gem "sinatra"
-gem "youtube_it"
+gem "vimeo"
 gem "rack-pjax"
 gem "newrelic_rpm"

@@ -44,7 +44,6 @@ section.video { margin-top:40px; }
 div.video-embed {
   position:relative;
   padding-bottom: 56.25%;
-  padding-top:30px;
   height:0;
   overflow:hidden;
 }
@@ -141,15 +140,11 @@ section.videos h6 {
   color:#fff;
 }
 
-section.videos a.crop {
-  display:block;
-  margin-bottom:20px;
-  overflow:hidden;
-  width:100%;
+div.video {
+  margin-bottom:30px;
 }
 
-section.videos a.crop img {
-  margin:-10% -0px -11% -0px;
+section.videos img {
   opacity:.8;
   -webkit-transition:opacity ease .5s;
   -moz-transition:opacity ease .5s;
@@ -157,7 +152,7 @@ section.videos a.crop img {
   transition:opacity ease .5s;
 }
 
-section.videos a.crop img:hover { opacity:1; }
+section.videos img:hover { opacity:1; }
 
 footer { margin-top:80px; }
 
