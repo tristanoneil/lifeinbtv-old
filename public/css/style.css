@@ -141,7 +141,12 @@ section.videos h6 {
 }
 
 div.video {
+  padding:0 30px 0 0;
   margin-bottom:30px;
+}
+
+@media only screen and (max-width: 767px) {
+  div.video { padding:0 30px 0 30px; }
 }
 
 section.videos img {
@@ -153,8 +158,6 @@ section.videos img {
 }
 
 section.videos img:hover { opacity:1; }
-
-footer { margin-top:80px; }
 
 footer p {
   font-weight:300;
