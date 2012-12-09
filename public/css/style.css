@@ -157,7 +157,7 @@ section.videos a.crop img {
   transition:opacity ease .5s;
 }
 
-section.videos img:hover { opacity:1; }
+section.videos a.crop img:hover { opacity:1; }
 
 footer { margin-top:80px; }
 
