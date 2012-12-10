@@ -23,7 +23,7 @@
     <meta property="og:image" content="<%= @video["thumbnail_large"] %>">
     <meta property="og:url" content="http://www.lifeinbtv.com/videos/<%= @video["id"] %>">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale = 1,user-scalable=no,maximum-scale=1.0">
 
     <script type="text/javascript">
 
@@ -41,12 +41,10 @@
   </head>
   <body>
     <%= yield %>
-    <footer class="container">
-      <section class="row">
-        <section class="twelve columns">
-          <p>Produced with <span>&#9825;</span> by <a href="http://twitter.com/tristanoneil" target="_blank">Tristan O'Neil</a>.</p>
-        </section>
-      </section>
-    </footer>
+    <div class="row footer">
+      <div class="twelve columns">
+        <p>Produced with <span>&#9825;</span> by <a href="http://twitter.com/tristanoneil" target="_blank">Tristan O'Neil</a>.</p>
+      </div>
+    </div>
   </body>
 </html>
