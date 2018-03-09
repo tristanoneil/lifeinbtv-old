@@ -1,29 +1,31 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    httparty (0.9.0)
-      multi_json (~> 1.0)
-      multi_xml
-    httpclient (2.3.0.1)
-    json (1.7.5)
-    multi_json (1.4.0)
-    multi_xml (0.5.1)
-    multipart-post (1.1.5)
-    newrelic_rpm (3.4.1)
-    nokogiri (1.5.5)
-    oauth (0.4.7)
-    rack (1.4.1)
-    rack-pjax (0.6.0)
+    httparty (0.16.0)
+      multi_xml (>= 0.5.2)
+    httpclient (2.8.3)
+    json (2.1.0)
+    mini_portile2 (2.3.0)
+    multi_xml (0.6.0)
+    multipart-post (2.0.0)
+    mustermann (1.0.2)
+    newrelic_rpm (4.8.0.341)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
+    oauth (0.5.4)
+    rack (2.0.4)
+    rack-pjax (1.0.0)
       nokogiri (~> 1.5)
-      rack (~> 1.3)
-    rack-protection (1.2.0)
+      rack (>= 1.1)
+    rack-protection (2.0.1)
       rack
-    sinatra (1.3.2)
-      rack (~> 1.3, >= 1.3.6)
-      rack-protection (~> 1.2)
-      tilt (~> 1.3, >= 1.3.3)
-    tilt (1.3.3)
-    vimeo (1.5.3)
+    sinatra (2.0.1)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.1)
+      tilt (~> 2.0)
+    tilt (2.0.8)
+    vimeo (1.5.4)
       httparty (>= 0.4.5)
       httpclient (>= 2.1.5.2)
       json (>= 1.1.9)
@@ -38,3 +40,6 @@ DEPENDENCIES
   rack-pjax
   sinatra
   vimeo
+
+BUNDLED WITH
+   1.16.1
