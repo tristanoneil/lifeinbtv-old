@@ -9,7 +9,6 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     mustermann (1.0.2)
-    newrelic_rpm (4.8.0.341)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     oauth (0.5.4)
@@ -36,7 +35,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  newrelic_rpm
   rack-pjax
   sinatra
   vimeo
