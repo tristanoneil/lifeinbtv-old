@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     httparty (0.16.0)
       multi_xml (>= 0.5.2)
@@ -38,6 +38,9 @@ DEPENDENCIES
   rack-pjax
   sinatra
   vimeo
+
+RUBY VERSION
+   ruby 2.3.3p222
 
 BUNDLED WITH
    1.16.1
